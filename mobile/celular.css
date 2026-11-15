@@ -1,0 +1,23 @@
+/* Página web no celular: aviso para girar o aparelho.
+   O div#nrxx-gire é criado por celular.js e só aparece em aparelho de toque (pointer: coarse)
+   segurado em pé. No computador, mesmo com a janela estreita, ele fica escondido. */
+#nrxx-gire {
+	display: none;
+	position: fixed;
+	inset: 0;
+	z-index: 2147483647; /* acima do canvas e de qualquer coisa que o Godot injete */
+	align-items: center;
+	justify-content: center;
+	padding: 24px;
+	box-sizing: border-box;
+	text-align: center;
+	background: #2b2838;
+	color: #f2b705;
+	font: bold 28px/1.3 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+@media (orientation: portrait) and (pointer: coarse) {
+	#nrxx-gire {
+		display: flex;
+	}
+}
